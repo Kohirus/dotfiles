@@ -3,7 +3,7 @@
 [Alacritty](https://github.com/alacritty/alacritty) 是一个跨平台、GPU 增强的终端模拟器。
 可以简单地实现在其他模拟器中不可能实现的优化。
 
-## 使用💻
+## 安装💻
 
 首先需要安装 JetBrains Nerd Font 字体。
 
@@ -12,6 +12,8 @@
 ```sh
 sudo pacman -S alacritty
 ```
+
+其中，`alacritty.exaexample.yml` 包含了所有选项的配置示例。
 
 ## 主题👕
 
@@ -47,3 +49,12 @@ alacritty-colorscheme -V status
 # 使用指定主题
 alacritty-colorscheme -V apply <theme-name>
 ```
+
+## 快捷键⌨️
+
+| 快捷键             | 说明     |
+| ------------------ | -------- |
+| `Ctrl + Shift + c` | 复制文本 |
+| `Ctrl + Shift + v` | 粘贴文本 |
+| `Ctrl + =`         | 增大字体 |
+| `Ctrl + -`         | 缩小字体 |
