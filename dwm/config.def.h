@@ -90,10 +90,10 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "rofi", "-show", "drun" };
 // static const char *termcmd[]  = { "st", NULL };
 static const char *termcmd[]  = { "alacritty", NULL };
-static const char *voldown[] = { "/home/tuilk/.config/suckless/dwm/scripts/voldown.sh", NULL};
-static const char *volup[] = { "/home/tuilk/.config/suckless/dwm/scripts/volup.sh", NULL};
-static const char *voltoggle[] = { "/home/tuilk/.config/suckless/dwm/scripts/voltoggle.sh", NULL};
-static const char *wallpaper[] = { "/home/tuilk/.config/suckless/dwm/scripts/wallpaper.sh", NULL };
+static const char *voldown[] = { "/home/tuilk/.config/dwm/scripts/voldown.sh", NULL};
+static const char *volup[] = { "/home/tuilk/.config/dwm/scripts/volup.sh", NULL};
+static const char *voltoggle[] = { "/home/tuilk/.config/dwm/scripts/voltoggle.sh", NULL};
+static const char *wallpaper[] = { "/home/tuilk/.config/dwm/scripts/wallpaper.sh", NULL };
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 

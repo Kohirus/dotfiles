@@ -65,8 +65,8 @@ static const char unknown_str[] = "n/a";
  */
 static const struct arg args[] = {
 	/* function 	format          		                argument */
-    { run_command, 	"^c#b197fc^ %s ", 		                "~/.config/suckless/slstatus/scripts/volume.sh"},
-    { run_command, 	"^c#ffa8a8^ %s ", 		                "~/.config/suckless/slstatus/scripts/battery.sh" },
+    { run_command, 	"^c#b197fc^ %s ", 		                "~/.config/slstatus/scripts/volume.sh"},
+    { run_command, 	"^c#ffa8a8^ %s ", 		                "~/.config/slstatus/scripts/battery.sh" },
 	{ run_command, 	"^c#282c34^^b#74c0fc^   %s ^d^ ", 	    "uname -r | awk -F \"-\" '{print$1}'"},
     { cpu_perc, 	"^c#282c34^^b#63e6be^   %s%% ^d^ ",    NULL },
     { ram_perc, 	"^c#282c34^^b#ffc078^   %s%% ^d^ ",    NULL },

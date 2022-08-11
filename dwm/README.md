@@ -23,14 +23,7 @@
 sudo make clean install
 ```
 
-然后将 `config.def.h` 文件中的如下内容更改为你自己的路径:
-
-```c
-static const char *voldown[] = { "/home/tuilk/.config/suckless/dwm/scripts/voldown.sh", NULL};
-static const char *volup[] = { "/home/tuilk/.config/suckless/dwm/scripts/dwm/volup.sh", NULL};
-static const char *voltoggle[] = { "/home/tuilk/.config/suckless/dwm/scripts/dwm/voltoggle.sh", NULL};
-static const char *wallpaper[] = { "/home/tuilk/.config/suckless/dwm/scripts/dwm/wallpaper.sh", NULL};
-```
+然后将 [config.def.h](https://github.com/tuilk/dotfiles/blob/main/dwm/config.def.h#L93-L96) 文件中的路径更改为你自己的路径。
 
 ## 补丁🧩
 

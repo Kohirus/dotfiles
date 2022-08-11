@@ -1826,7 +1826,7 @@ run(void)
 
 void
 runAutostart(void) {
-	system("cd ~/.config/suckless/dwm/scripts; ./init.sh &");
+	system("cd ~/.config/dwm/scripts; ./init.sh &");
 }
 
 void
