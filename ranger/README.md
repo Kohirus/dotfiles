@@ -10,7 +10,11 @@
 sudo pacman -S ranger
 ```
 
-如果需要浏览图片，请阅览 [wiki](https://github.com/ranger/ranger/wiki/Image-Previews)。
+然后通过 pip 安装 [ueberzug](https://github.com/seebye/ueberzug) 以浏览图片：
+
+```sh
+pip install ueberzug
+```
 
 ## 说明📑
 
