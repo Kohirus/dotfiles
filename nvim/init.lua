@@ -1,0 +1,6 @@
+require("core.options")
+require("core.autocmd")
+require("core.mappings")
+require("core.utils")
+require("core.lazy_load")
+require("core.plugins")
