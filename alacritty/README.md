@@ -33,8 +33,8 @@ sudo pacman -S alacritty
 
 将配色复制到 `alacritty.yml` 文件中即可。
 
-此外，也可以使用 [alacritty-colorscheme](https://github.com/toggle-corp/alacritty-colorscheme) 来
-快速切换主题。(可以通过 aur 或者 pip 进行下载)。
+此外，也可以使用 [alacritty-colorscheme](https://github.com/toggle-corp/alacritty-colorscheme) 
+来快速切换主题。(可以通过 aur 或者 pip 进行下载)。
 
 下载完成后将其添加到环境变量即可，配置方法见 [doc](https://github.com/toggle-corp/alacritty-colorscheme/blob/master/README.md)，
 其用法如下：
