@@ -14,7 +14,7 @@ sudo pacman -S rofi
 sudo pacman -S papirus-icon-theme
 ```
 
-将 `scripts` 文件夹下的 sh 文件复制到 `~/.local/bin` 路径下，输入 `powermenu` 即可显示电源菜单。
+将 `scripts` 文件夹下的文件复制到 `~/.local/bin` 路径下，输入 `powermenu` 即可显示电源菜单。
 
 ## 命令📞
 
