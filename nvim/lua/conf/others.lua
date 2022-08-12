@@ -143,10 +143,6 @@ M.todo_comments = function()
 	if not todo_comments then
 		return
 	end
-	-- TODO: 123
-	-- FIX: 123
-	-- WARN: 123
-	-- NOTE: 123
 	todo_comments.setup({
 		keywords = {
 			FIX = {
@@ -175,6 +171,19 @@ M.undotree = function()
       let &undodir = target_path
       set undofile
     ]])
+end
+
+-- https://github.com/ethanholz/nvim-lastplace
+M.lastplace = function()
+	local lastplace = prequire("nvim-lastplace")
+	if not lastplace then
+		return
+	end
+  lastplace.setup({
+    lastplace_ignore_buftype = {"quickfix", "nofile", "help"},
+    lastplace_ignore_filetype = {"gitcommit", "gitrebase", "svn", "hgcommit"},
+    lastplace_open_folds = true
+  })
 end
 
 return M

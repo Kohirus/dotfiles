@@ -2,7 +2,7 @@
 
 ## 工作流🚀
 
-- 桌面管理器：ly
+- 登录管理器：ly
 - 窗口管理器：dwm
 - 程序启动器：rofi / dmenu
 - 终端：alacritty / st

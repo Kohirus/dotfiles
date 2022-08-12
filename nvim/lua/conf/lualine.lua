@@ -96,23 +96,26 @@ lualine.setup({
 	options = {
 		icons_enabled = true,
 		theme = "horizon", --"auto",
-		-- component_separators = "|",
+		component_separators = "|",
 		-- component_separators = { left = "", right = "" },
 		-- section_separators = { left = "", right = "" },
-		component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
+		-- component_separators = { left = "", right = "" },
+		-- section_separators = { left = "", right = "" },
+		section_separators = "",
 		-- 特定文件类型禁用lualine
 		disabled_filetypes = { "alpha", "NvimTree", "Outline", "spectre_panel", "packer" },
 		-- 设置为true时 即使右部分不存在 左部分都无法占据整个状态栏空间
 		always_divide_middle = true,
 	},
 	sections = {
-		lualine_a = { "mode", { separator = { right = "" }, right_padding = 2 } },
+		-- lualine_a = { "mode", { separator = { right = "" }, right_padding = 2 } },
+		lualine_a = { "mode" },
 		lualine_b = { branch, diagnostics },
 		lualine_c = { file_name },
 		lualine_x = { diff, "filetype" },
 		lualine_y = { progress },
-		lualine_z = { "location", { separator = { left = "" }, left_padding = 0 } },
+		-- lualine_z = { "location", { separator = { left = "" }, left_padding = 0 } },
+		lualine_z = { "location" },
 	},
 	inactive_sections = {
 		lualine_a = {},
