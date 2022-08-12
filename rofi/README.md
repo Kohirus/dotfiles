@@ -3,6 +3,8 @@
 [rofi](https://github.com/davatorium/rofi) 是一个程序启动器。和 dmenu 一样，为用户提供一个文本选项
 列表，其中可以选择一个或多个选项。它可以运行应用程序、选择窗口或者运行外部脚本等。
 
+![screenshot](https://raw.githubusercontent.com/tuilk/Image/main/rofi.png)
+
 ## 安装💻
 
 输入如下命令安装 rofi 和扁平化图标:
@@ -11,6 +13,8 @@
 sudo pacman -S rofi
 sudo pacman -S papirus-icon-theme
 ```
+
+将 `scripts` 文件夹下的 sh 文件复制到 `~/.local/bin` 路径下，输入 `powermenu` 即可显示电源菜单。
 
 ## 命令📞
 

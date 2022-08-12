@@ -2,6 +2,8 @@
 
 [slock](https://tools.suckless.org/slock/) 是 suckless 中的一个极简的锁屏工具。
 
+![screenshot](https://raw.githubusercontent.com/tuilk/Image/main/slock.png)
+
 ## 安装
 
 打开 `config.def.h` 文件，将如下代码中的用户名和群组名更改为自己的：
