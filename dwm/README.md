@@ -23,7 +23,7 @@
 sudo make clean install
 ```
 
-然后将 [config.def.h](https://github.com/tuilk/dotfiles/blob/main/dwm/config.def.h#L93-L96) 文件中的路径更改为你自己的路径。
+然后将 [config.def.h](https://github.com/tuilk/dotfiles/blob/main/dwm/config.def.h#L94-L98) 文件中的路径更改为你自己的路径。
 
 ## 补丁🧩
 
@@ -78,6 +78,7 @@ sudo make clean install
 | `MODKEY + F2`               | 减小音量                                |
 | `MODKEY + F3`               | 增大音量                                |
 | `MODKEY + w`                | 切换壁纸                                |
+| `MODKEY + x`                | 打开电源菜单                            |
 
 ## 自定义配置💡
 

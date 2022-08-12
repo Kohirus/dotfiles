@@ -1,0 +1,97 @@
+window:
+  dimensions:
+    colums: 250
+    lines: 34
+  position:
+    x: 580
+    y: 800
+  padding:
+    x: 5
+    y: 5
+  class:
+    instace: Alacritty
+    general: Alacritty
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+window_opacity: 1
+
+font:
+  normal:
+    family: JetBrains Mono Nerd Font
+    style: Medium
+  bold:
+    family: JetBrains Mono Nerd Font
+    style: Bold
+  italic:
+    family: JetBrains Mono Nerd Font
+    style: MediumItalic
+  bold_italic:
+    family: JetBrains Mono Nerd Font
+    style: BoldItalic
+  size: 14
+draw_bold_text_with_bright_colors: true
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+    blink-interval: 750
+
+selection:
+  save_to_clipboard: false
+
+shell:
+  program: /usr/bin/zsh
+
+colors:
+  # COLORSCHEME: palenight.yml
+  # Default colors
+  primary:
+    # hard contrast: background = '0x1d2021'
+    background: '0x292d3e'
+    foreground: '0xd0d0d0'
+
+  # Normal colors
+  normal:
+  # Bright colors
+    black: '0x292d3e'
+    red: '0xf07178'
+    green: '0xc3e88d'
+    yellow: '0xffcb6b'
+    blue: '0x82aaff'
+    magenta: '0xc792ea'
+    cyan: '0x89ddff'
+    white: '0xd0d0d0'
+
+  # Bright colors
+  bright:
+    black: '0x434758'
+    red: '0xff8b92'
+    green: '0xddffa7'
+    yellow: '0xffe585'
+    blue: '0x9cc4ff'
+    magenta: '0xe1acff'
+    cyan: '0xa3f7ff'
+    white: '0xffffff'
+  cursor:
+    text: '0x7f85a3'
+    cursor: '0x808080'
+
+  indexed_colors: []
+  selection:
+    text: '#ffe9d7'
+    background: '#265b75'
+
+  # Normal colors
+  dim:
+    black: '0x232323'
+    red: '0x74423f'
+    green: '0x5e6547'
+    yellow: '0x8b7653'
+    blue: '0x556b79'
+    magenta: '0x6e4962'
+    cyan: '0x5c8482'
+    white: '0x828282'
