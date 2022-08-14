@@ -16,6 +16,18 @@ sudo pacman -S ranger
 pip install ueberzug
 ```
 
+安装 `highlight` 以高亮预览文件。
+
+## 插件🧩
+
+首先，你需要安装 Nerd Font 以显示图标字体。
+
+然后安装 [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons) 插件以显示文件图标：
+
+```sh
+git clone https://github.com/alexanderjeurissen/ranger_devicons ~/.config/ranger/plugins/ranger_devicons
+```
+
 ## 说明📑
 
 各个文件的说明如下：
