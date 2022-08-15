@@ -2,21 +2,21 @@ local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true }
   local keybinds = vim.api.nvim_buf_set_keymap
   -- 异步 lsp 查找
-  keybinds(bufnr, "n", "gf", "<cmd>Lspsaga lsp_fidner<cr>", opts)
+  keybinds(bufnr, "n", "gh", "<cmd>Lspsaga lsp_finder<cr>", opts)
   --  代码行为
   keybinds(bufnr, "n", "<leader>ca", "<cmd>Lspsaga code_action<cr>", opts)
   -- 悬停文档
-  keybinds(bufnr, "n", "gh", "<cmd>Lspsaga hover_doc<cr>", opts)
-  keybinds(bufnr, "n", "<C-d>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", opts)
-  keybinds(bufnr, "n", "<C-u>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)
+  keybinds(bufnr, "n", "K", "<cmd>Lspsaga hover_doc<cr>", opts)
+  keybinds(bufnr, "n", "<C-f>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(1)<cr>", opts)
+  keybinds(bufnr, "n", "<C-b>", "<cmd>lua require('lspsaga.action').smart_scroll_with_saga(-1)<cr>", opts)
   -- 签名帮助
   keybinds(bufnr, "n", "gs", "<cmd>Lspsaga signature_help<cr>", opts)
   -- 变量重命名
-  keybinds(bufnr, "n", "<leader>cn", "<cmd>Lspsaga rename<cr>", opts)
+  keybinds(bufnr, "n", "gr", "<cmd>Lspsaga rename<cr>", opts)
   -- 预览定义
-  keybinds(bufnr, "n", "pd", "<cmd>Lspsaga preview_definition<cr>", opts)
+  keybinds(bufnr, "n", "gd", "<cmd>Lspsaga preview_definition<cr>", opts)
   -- 显示代码诊断
-  keybinds(bufnr, "n", "gd", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
+  keybinds(bufnr, "n", "<leader>cd", "<cmd>Lspsaga show_line_diagnostics<cr>", opts)
   -- 诊断跳转
   keybinds(bufnr, "n", "g[", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)
   keybinds(bufnr, "n", "g]", "<cmd>Lspsaga diagnostic_jump_prev<cr>", opts)

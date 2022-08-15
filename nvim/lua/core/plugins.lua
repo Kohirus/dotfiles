@@ -85,7 +85,7 @@ local plugins = {
 		end,
 	},
 
-	["tami5/lspsaga.nvim"] = {
+	["kkharji/lspsaga.nvim"] = {
 		after = "lsp_signature.nvim",
 		config = function()
 			require("conf.lspsaga")

@@ -92,7 +92,7 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 
 **LSP**
 - [x] [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)：lsp 配置
-- [x] [lspsaga.nvim](https://github.com/tami5/lspsaga.nvim)：lsp 相关的 UI
+- [x] [lspsaga.nvim](https://github.com/kkharji/lspsaga.nvim)：lsp 相关的 UI
 - [x] [lsp_signature](https://github.com/ray-x/lsp_signature.nvim)：函数签名提示
 - [x] [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)：更容易安装 lsp 相关服务器
 
@@ -168,154 +168,158 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 - [Nerd Font](https://www.nerdfonts.com/)
 - [clang-format document](https://clang.llvm.org/docs/ClangFormatStyleOptions.html#)
 
-## Keyboard Shortcuts⌨️
+## 快捷键⌨️
 
-### Basic
+### 基础键位
 
-> Default `<leader>` key is `;`, press `<Space>` can toggle [which-key](https://github.com/folke/which-key.nvim), 
-press `<Backspace>` can return previous menu, press `<Ctrl+\>` can toggle terminal。
+默认的 `<leader>` 键为 `;`。
 
-|   Mode   |    Shortcuts     |            Discription             |
+按下 `<Space>` 可以打开 [which-key](https://github.com/folke/which-key.nvim), 按下 `<Backspace>` 可以返回上一菜单。
+
+按下 `<Ctrl + \>` 可以打开/关闭终端。
+
+|   模式   |      快捷键      |                描述                |
 | :------: | :--------------: | :--------------------------------: |
-| `normal` | `Ctrl + h/j/k/l` |    move cursor between windows     |
-| `normal` | `Ctrl + ↑/↓/←/→` |           resize window            |
+| `normal` | `Ctrl + h/j/k/l` |    在窗口间移动光标                |
+| `normal` | `Ctrl + ↑/↓/←/→` |           改变窗口大小             |
 | `normal` |   `Ctrl + u/d`   |            Page Up/Down            |
-| `normal` |   `Alt + j/k`    |     move current line up/down      |
-| `normal` |  `Shift + e/r`   |     switch the left/right tab      |
-| `normal` |  `<leader> + s`  |      switch the opposite word      |
-| `normal` |       `<`        |      move current tab to left      |
-| `normal` |       `>`        |     move current tab to right      |
-| `normal` |    `Ctrl + s`    |         save current file          |
-| `normal` |      `ESC`       |       close highlight search       |
-| `normal` |    `Ctrl + c`    |  copy all content in current file  |
-| `normal` |  `<leader> + c`  |             goto char              |
-| `normal` |  `<leader> + w`  |             goto word              |
-| `normal` |  `<leader> + l`  |             goto line              |
-| `normal` |  `<leader> + r`  |          run current file          |
-| `normal` | `<leader> + rc`  |          close run window          |
-| `normal` |      `H/L`       | goto the beginning/end of the line |
-| `visual` |     `< / >`      |         change indentation         |
-| `visual` |   `Alt + j/k`    |     move current block up/down     |
-| `visual` |    `Alt + /`     |           comment block            |
-| `visual` |      `H/L`       | goto the beginning/end of the line |
-| `insert` |       `jk`       |          exit insert mode          |
-| `insert` |   `Alt + j/k`    |     move current line up/down      |
-| `insert` | `Alt + ↑/↓/←/→`  |    move cursor between windows     |
+| `normal` |   `Alt + j/k`    |     将当前行向上/下移动            |
+| `normal` |  `Shift + e/r`   |     切换到上一个/下一个标签页      |
+| `normal` |  `<leader> + s`  |         转换为反义单词             |
+| `normal` |       `<`        |      将当前标签页向左移动          |
+| `normal` |       `>`        |      将当前标签页向右移动          |
+| `normal` |    `Ctrl + s`    |            保存当前文件            |
+| `normal` |      `ESC`       |              关闭高亮搜索          |
+| `normal` |    `Ctrl + c`    |         复制当前文件的所有内容     |
+| `normal` |  `<leader> + c`  |             跳转到字符             |
+| `normal` |  `<leader> + w`  |             跳转到单词             |
+| `normal` |  `<leader> + l`  |             跳转到行               |
+| `normal` |  `<leader> + r`  |              运行当前文件          |
+| `normal` | `<leader> + rc`  |             关闭运行窗口           |
+| `normal` |      `H/L`       |           跳转到行首/行尾          |
+| `visual` |     `< / >`      |            改变缩进                |
+| `visual` |   `Alt + j/k`    |         将当前块向上/下移动        |
+| `visual` |    `Alt + /`     |           注释所选块               |
+| `visual` |      `H/L`       |            跳转到行首/行尾         |
+| `insert` |       `jk`       |              退出插入模式          |
+| `insert` |   `Alt + j/k`    |         将当前行向上/向下移动      |
+| `insert` | `Alt + ↑/↓/←/→`  |             在窗口间移动光标       |
 
-### File Explorer
+### 文件树
 
-| Shortcuts      | Discription                                            |
-| -------------- | ------------------------------------------------------ |
-| `<leader> + e` | toggle file explore                                    |
-| `<leader> + f` | locate current file in file explore                    |
-| `o`            | open file/directory                                    |
-| `a`            | create file/directory                                  |
-| `r`            | rename file/directory                                  |
-| `x`            | cut file/directory                                     |
-| `c`            | copy file/directory                                    |
-| `d`            | delete file/directory                                  |
-| `y`            | copy file/directory name                               |
-| `Y`            | copy file/directory relative path                      |
-| `gy`           | copy file/directory absolute path                      |
-| `p`            | paste file/directory                                   |
-| `s`            | use default program to open file/directory             |
-| `Tab`          | add file to buffer, but don't move cursor              |
-| `Ctrl + v`     | open file for vertical spilt                           |
-| `Ctrl + x`     | open file for horizontal spilt                         |
-| `Ctrl + ]`     | enter the directory under cursor                       |
-| `Ctrl + r`     | rename file/directory, and delete exist file/directory |
-| `-`            | return the parent directory                            |
-| `I`            | toggle hidden file                                     |
-| `H`            | toggle dot file                                        |
-| `R`            | refresh file explorer                                  |
+| 快捷键         | 描述                                      |
+| -------------- | ----------------------------------------- |
+| `<leader> + e` | 打开/关闭文件树                           |
+| `<leader> + f` | 在文件树中定位当前文件                    |
+| `o`            | 打开文件/目录                             |
+| `a`            | 创建文件/目录                             |
+| `r`            | 重命名文件/目录                           |
+| `x`            | 剪切文件/目录                             |
+| `c`            | 复制文件/目录                             |
+| `d`            | 删除文件/目录                             |
+| `y`            | 复制文件/目录的名称                       |
+| `Y`            | 复制文件/目录的相对路径                   |
+| `gy`           | 复制文件/目录的绝对路径                   |
+| `p`            | 粘贴文件/目录                             |
+| `s`            | 使用默认程序打开文件/目录                 |
+| `Tab`          | 将文件添加到缓冲区但是不移动光标          |
+| `Ctrl + v`     | 以垂直分割窗口打开文件                    |
+| `Ctrl + x`     | 以水平分割窗口打开文件                    |
+| `Ctrl + ]`     | 进入光标下的目录                          |
+| `Ctrl + r`     | 重命名文件/目录，同时删除同名文件/目录    |
+| `-`            | 返回父目录                                |
+| `I`            | 显示/隐藏 隐藏文件                        |
+| `H`            | 显示/隐藏 点文件                          |
+| `R`            | 刷新文件树                                |
 
-### Code Navigation
+### 代码导航
 
-| Shortcuts|               Discription               |
-| :------: | :-------------------------------------: |
-|   `][`   |   goto the beginning of next function   |
-|   `]]`   |      goto the end of next function      |
-|   `[[`   | goto the beginning of previous function |
-|   `[]`   |    goto the end of previous function    |
-|   `af`   |          goto out of function           |
-|   `if`   |         goto inner of function          |
-|   `ac`   |            goto out of class            |
-|   `ic`   |           goto inner of class           |
-|  `<CR>`  |             init the block              |
-|  `<CR>`  |           increase the block            |
-|  `<BS>`  |           decrease the block            |
-| `<TAB>`  |             select a scope              |
+| 快捷键   | 描述                         |
+| :------: | :--------------------------: |
+|   `][`   | 跳转到下一个函数的开头       |
+|   `]]`   | 跳转到下一个函数的结尾       |
+|   `[[`   | 跳转到上一个函数的开头       |
+|   `[]`   | 跳转到上一个函数的结尾       |
+|   `af`   | 跳出函数外                   |
+|   `if`   | 跳到函数内                   |
+|   `ac`   | 跳到类外                     |
+|   `ic`   | 跳到类内                     |
+|  `<CR>`  | 初始化文本块                 |
+|  `<CR>`  | 增大文本块                   |
+|  `<BS>`  | 缩小文本块                   |
+| `<TAB>`  | 选择一个范围                 |
 
-### Code Action
+### LSP
 
-|    Shortcuts    |        Discription        |
-| :-------------: | :-----------------------: |
-| `<leader> + ca` |     view code action      |
-|      `gh`       |    view float document    |
-|  `Ctrl + u/d`   |       page up/down        |
-|      `gs`       |      signature help       |
-| `<leader> + cn` |      rename variable      |
-|      `pd`       |    preview definiation    |
-|      `gd`       |   show code diagnostics   |
-|      `g[`       | goto previous diagnostics |
-|      `g]`       |   goto next diagnostics   |
+| 快捷键          | 描述                                 |
+| :-------------: | :----------------------------------: |
+| `<leader> + ca` | 查看代码行为                         |
+| `<leader> + cd` | 查看代码诊断                         |
+|      `K`        | 查看悬浮文档                         |
+|  `Ctrl + b/f`   | 向上/向下翻页                        |
+|      `gs`       | 签名帮助                             |
+|      `gr`       | 重命名变量                           |
+|      `gd`       | 查看预览定义                         |
+|      `gh`       | 异步lsp查找: 查找光标处的定义和引用  |
+|      `g[`       | 跳转到上一个诊断                     |
+|      `g]`       | 跳转到下一个诊断                     |
 
 ### Git
 
-|    Shortcuts     |    Discription     |
-| :--------------: | :----------------: |
-| `<leader> + k/j` |   prev/next hunk   |
-| `<leader> + hs`  |     stage hunk     |
-| `<leader> + hu`  |    unstage hunk    |
-| `<leader> + hr`  |     reset hunk     |
-| `<leader> + hp`  |    preview hunk    |
-|  `<sapce> + gd`  |     diff file      |
-|  `<space> + gf`  |    file history    |
+| 快捷键           | 描述                 |
+| :--------------: | :------------------: |
+| `<leader> + k/j` | 上一个/下一个 hunk   |
+| `<leader> + hs`  | 提交 hunk            |
+| `<leader> + hu`  | 取消提交 hunk        |
+| `<leader> + hr`  | 重置 hunk            |
+| `<leader> + hp`  | 预览 hunk            |
+|  `<sapce> + gd`  | 文件差异             |
+|  `<space> + gf`  | 文件历史             |
 
-### Comment
+### 代码注释
 
-|   Shortcuts   |      Discription      |
-| :-----------: | :-------------------: |
-| `<Space> + /` | comment current line  |
-|   `Alt + /`   | comment current block |
-|     `gcc`     | comment current line  |
-|     `gc`      | comment current block |
+| 快捷键        | 描述        |
+| :-----------: | :---------: |
+| `<Space> + /` | 注释当前行  |
+|   `Alt + /`   | 注释所选块  |
+|     `gcc`     | 注释当前行  |
+|     `gc`      | 注释所选块  |
 
-### Symbol Outline
+### 符号大纲
 
-|   Shortcuts    |                Discription                |
-| :------------: | :---------------------------------------: |
-| `<Space> + do` |           toggle symbol outline           |
-|   `<Esc>/q`    |               quit outline                |
-|     `<CR>`     |       goto symbol location in code        |
-|      `o`       | goto symbol location but don't lose focus |
-| `Ctrl + Space` |           float current symbol            |
-|      `K`       |       switch current symbol preview       |
-|      `r`       |               rename symbol               |
-|      `a`       |                code action                |
-|      `?`       |              show help info               |
+| 快捷键         | 描述                                       |
+| :------------: | :----------------------------------------: |
+| `<Space> + do` | 打开/关闭 符号大纲                         |
+|   `<Esc>/q`    | 退出符号大纲                               |
+|     `<CR>`     | 跳转到当前符号在代码中的位置               |
+|      `o`       | 跳转到当前符号在代码中的位置但是不失去焦点 |
+| `Ctrl + Space` | 悬浮当前符号                               |
+|      `K`       | 切换当前符号预览                           |
+|      `r`       | 重命名当前符号                             |
+|      `a`       | 查看代码行为                               |
+|      `?`       | 显示帮助面板                               |
 
 ### DAP
 
-|   Shortcuts    |         Discription          |
+| 快捷键         | 描述                         |
 | :------------: | :--------------------------: |
-|     `<F8>`     | set/clear current breakpoint |
-| `<leader> + b` |  set conditional breakpoint  |
-|     `<F6>`     |          stop debug          |
-|     `<F5>`     |    startup debug/continue    |
-|     `<F9>`     |             skip             |
-|    `<F10>`     |           jump in            |
-|    `<F11>`     |           jump out           |
-|      `K`       |    view current variable     |
+|     `<F8>`     | 设置/清除当前行的断点        |
+| `<leader> + b` | 设置条件断点                 |
+|     `<F6>`     | 停止调试                     |
+|     `<F5>`     | 启动调试/继续运行            |
+|     `<F9>`     | 跳过                         |
+|    `<F10>`     | 跳入                         |
+|    `<F11>`     | 跳出                         |
+|      `K`       | 查看当前变量                 |
 
 ### GDB
 
-|  Shortcuts   |     Discription     |
-| :----------: | :-----------------: |
-| `<leader>dd` |    startup debug    |
-|     `-n`     |        skip         |
-|     `-s`     |       jump in       |
-|     `-f`     |      jump out       |
-|     `-c`     |      continue       |
-|     `-u`     | run to current line |
-|     `-b`     |   set breakpoint    |
+| 快捷键       | 描述           |
+| :----------: | :------------: |
+| `<leader>dd` | 启动调试       |
+|     `-n`     | 跳过           |
+|     `-s`     | 跳入           |
+|     `-f`     | 跳出           |
+|     `-c`     | 继续运行       |
+|     `-u`     | 运行到当前行   |
+|     `-b`     | 设置断点       |
