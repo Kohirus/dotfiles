@@ -79,7 +79,6 @@ local mappings = {
 	["u"] = { "<cmd>UndotreeToggle<cr>", "Undo Tree" },
 	["x"] = { "<cmd>BufferClose<CR>", "Close Buffer" },
 	["r"] = { "<cmd>Lspsaga rename<cr>", "Rename" },
-	["l"] = { "<cmd>lua _lazygit_toggle()<cr>", "Lazygit" },
 	["t"] = { "<cmd>lua require('core.utils').ToggleTheme()<cr>", "Toggle Theme" },
 	["f"] = { "<cmd>FormatWrite<cr>", "Formatter" },
 

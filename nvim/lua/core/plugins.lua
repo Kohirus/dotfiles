@@ -369,6 +369,12 @@ local plugins = {
 		end,
 	},
 
+	["ethanholz/nvim-lastplace"] = {
+		config = function()
+			require("conf.others").lastplace()
+		end,
+	},
+
 	["ravenxrz/DAPInstall.nvim"] = {
 		opt = true,
 		cmd = require("core.lazy_load").dapinstall_cmds,

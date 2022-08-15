@@ -18,13 +18,13 @@ onedarkpro.setup({
 		keywords = "bold,italic", -- Style that is applied to keywords
 		functions = "NONE", -- Style that is applied to functions
 		variables = "NONE", -- Style that is applied to variables
-		virtual_text = "italic", -- Style that is applied to virtual text
+		virtual_text = "NONE", -- Style that is applied to virtual text
 	},
 	options = {
 		bold = true, -- Use the themes opinionated bold styles?
-		italic = true, -- Use the themes opinionated italic styles?
-		underline = false, -- Use the themes opinionated underline styles?
-		undercurl = false, -- Use the themes opinionated undercurl styles?
+		italic = false, -- Use the themes opinionated italic styles?
+		underline = true, -- Use the themes opinionated underline styles?
+		undercurl = true, -- Use the themes opinionated undercurl styles?
 		cursorline = true, -- Use cursorline highlighting?
 		transparency = false, -- Use a transparent background?
 		terminal_colors = false, -- Use the theme's colors for Neovim's :terminal?
