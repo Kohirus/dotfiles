@@ -27,7 +27,7 @@ barbar.setup({
 	-- 否则, 将使用 devicons 所定义的的默认值
 	icon_custom_color = false,
 	-- 配置 bufferline 图标
-	icon_separator_active = "│", --"▎",
+	icon_separator_active = "▎",
 	icon_separator_inactive = "│",
 	icon_close_tab = "",
 	icon_close_tab_modified = "●",
