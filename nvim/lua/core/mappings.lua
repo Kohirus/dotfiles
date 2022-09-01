@@ -86,7 +86,8 @@ local defaults = {
 		["<ESC>"] = ":nohlsearch<CR>",
 
     -- 切换 header/source 文件
-    ["<A-o>"] = ":ClangdSwitchSourceHeader<CR>",
+    -- ["<A-o>"] = ":ClangdSwitchSourceHeader<CR>",
+    ["<A-o>"] = ":Ouroboros<CR>",
 
 		-- 调试相关
 		["<F8>"] = ":lua require'dap'.toggle_breakpoint(); require'conf.dap-util'.store_breakpoints(true)<CR>",

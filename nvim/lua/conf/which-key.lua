@@ -101,6 +101,7 @@ local mappings = {
 		s = { "<cmd>lua require('telescope.builtin').lsp_document_symbols()<CR>", "Document Symbols" },
 		S = { "<cmd>lua require('telescope.builtin').lsp_dynamic_workspace_symbols()<CR>", "Workspace Symbols" },
 		d = { "<cmd>TodoTelescope<CR>", "Todo List" },
+		p = { "<cmd>Telescope projects<CR>", "Projects" },
 	},
 
 	c = {

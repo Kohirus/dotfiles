@@ -28,7 +28,7 @@ packer.init({
 	display = {
 		working_sym = "⌛", --" ﲊ",
 		error_sym = "💀", --"✗ ",
-		done_sym = "✔️",--" ",
+		done_sym = "✔️", --" ",
 		removed_sym = "❌", --" ",
 		moved_sym = "🔧", --"",
 		open_fn = function()
@@ -431,11 +431,24 @@ local plugins = {
 	},
 
 	["brglng/vim-im-select"] = {
-    disable = true,
+		disable = true,
 		config = function()
 			require("conf.others").im_select()
 		end,
 	},
+
+	["jakemason/ouroboros"] = {
+		opt = true,
+		ft = { "cpp", "h", "c" },
+		requires = { "nvim-lua/plenary.nvim" },
+	},
+
+  ["ahmedkhalf/project.nvim"] = {
+    config = function()
+      require("conf.project")
+    end
+  },
+
 }
 
 return packer.startup(function(use)

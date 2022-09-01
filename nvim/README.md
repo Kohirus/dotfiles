@@ -119,6 +119,7 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 - [x] [nvim-hslens](https://github.com/kevinhwang91/nvim-hlslens)：高亮查找
 - [x] [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)：查找/替换
 - [x] [hop.nvim](https://github.com/phaazon/hop.nvim)：快速跳转到行、词、字符
+- [x] [ouroboros](https://github.com/jakemason/ouroboros.nvim): 在头文件和源文件之间跳转
 
 **主题**
 - [x] [catppuccin](https://github.com/catppuccin/nvim)
@@ -138,6 +139,7 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 - [x] [nvim-autopairs](https://github.com/windwp/nvim-autopairs)：自动括号
 - [x] [indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim)：缩进线
 - [x] [vim-illuminate](https://github.com/RRethy/vim-illuminate)：高亮显示光标单词
+- [x] [project.nvim](https://github.com/ahmedkhalf/project.nvim)：提供卓越的项目管理功能
 
 **运行/调试**
 - [x] [nvim-dap](https://github.com/mfussenegger/nvim-dap)：调试
