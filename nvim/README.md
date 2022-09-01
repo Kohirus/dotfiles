@@ -29,7 +29,7 @@
 **LSP**
 
 你需要参阅 [lsp server](https://github.com/williamboman/nvim-lsp-installer#available-lsps) 和
-[defaultconfiguration](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
+[default_configuration](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 为你的语言选择合适的服务器和基本配置。
 
 在这个库中，我使用了如下 lsp 服务器：
@@ -114,7 +114,7 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 - [x] [nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow)：彩虹括号
 - [x] [nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context)
 
-**查找、调整**
+**查找、跳转**
 - [x] [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)：查找
 - [x] [nvim-hslens](https://github.com/kevinhwang91/nvim-hlslens)：高亮查找
 - [x] [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)：查找/替换
@@ -146,7 +146,7 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 - [x] [DAPInstall.nvim](https://github.com/Pocco81/DAPInstall.nvim)：安装 dap 相关配置
 - [x] [code_runner.nvim](https://github.com/CRAG666/code_runner.nvim)：运行代码
 
-**区域**
+**工作区域**
 - [x] [barbar.nvim](https://github.com/romgrk/barbar.nvim)：标签页
 - [x] [lualine.nvim](https://github.com/nvim-lualine/lualine.nvim)：状态栏
 - [x] [undotree](https://github.com/mbbill/undotree)：撤销树

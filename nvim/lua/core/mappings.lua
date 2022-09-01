@@ -85,6 +85,9 @@ local defaults = {
 		-- 关闭高亮搜索
 		["<ESC>"] = ":nohlsearch<CR>",
 
+    -- 切换 header/source 文件
+    ["<A-o>"] = ":ClangdSwitchSourceHeader<CR>",
+
 		-- 调试相关
 		["<F8>"] = ":lua require'dap'.toggle_breakpoint(); require'conf.dap-util'.store_breakpoints(true)<CR>",
 		["<leader>b"] = ":lua require'dap'.set_breakpoint(vim.fn.input '[Condition] > ')<CR>",
