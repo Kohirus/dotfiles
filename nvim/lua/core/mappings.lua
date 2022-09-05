@@ -87,7 +87,7 @@ local defaults = {
 
     -- 切换 header/source 文件
     -- ["<A-o>"] = ":ClangdSwitchSourceHeader<CR>",
-    ["<A-o>"] = ":Ouroboros<CR>",
+    ["<A-o>"] = ":SwitchSourceAndHeader<CR>",
 
 		-- 调试相关
 		["<F8>"] = ":lua require'dap'.toggle_breakpoint(); require'conf.dap-util'.store_breakpoints(true)<CR>",
@@ -107,6 +107,10 @@ local defaults = {
 		-- Code Run
 		["<leader>r"] = ":RunCode<CR>",
 		["<leader>rc"] = ":RunClose<CR>",
+
+    -- 快速生成静态变量和函数定义
+    ["<leader>cf"] = ":CreateFuncDefInSource<CR>",
+    ["<leader>cv"] = ":CreateStaticVarDefInSource<CR>",
 	},
 
 	term_mode = {

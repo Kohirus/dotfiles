@@ -437,18 +437,17 @@ local plugins = {
 		end,
 	},
 
-	["jakemason/ouroboros"] = {
-		opt = true,
-		ft = { "cpp", "h", "c" },
-		requires = { "nvim-lua/plenary.nvim" },
+	["ahmedkhalf/project.nvim"] = {
+		config = function()
+			require("conf.project")
+		end,
 	},
 
-  ["ahmedkhalf/project.nvim"] = {
-    config = function()
-      require("conf.project")
-    end
-  },
-
+	["tuilk/cppassist.nvim"] = {
+		opt = true,
+		ft = { "h", "cpp", "hpp", "c", "cc" },
+		requires = { { "nvim-lua/plenary.nvim" } },
+	},
 }
 
 return packer.startup(function(use)
