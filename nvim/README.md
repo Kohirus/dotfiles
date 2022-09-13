@@ -325,3 +325,15 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 |     `-c`     | 继续运行       |
 |     `-u`     | 运行到当前行   |
 |     `-b`     | 设置断点       |
+
+## 常见问题❓
+
+1. 如何使用 lsp 进行代码跳转等操作？
+
+- 如果项目是通过 makefile 进行管理的，则可以下载 [bear](https://github.com/rizsotto/Bear) 工具，
+然后在项目目录下输入 `bear -- make` 即可(如果 gRPC 对端关闭，可能需要关闭代理)。
+- 如果项目是通过 cmake 进行管理的，定义如下内容即可：
+
+```cmake
+cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=1
+```

@@ -109,8 +109,8 @@ local defaults = {
 		["<leader>rc"] = ":RunClose<CR>",
 
     -- 快速生成静态变量和函数定义
-    ["<leader>cf"] = ":CreateFuncDefInSource<CR>",
-    ["<leader>cv"] = ":CreateStaticVarDefInSource<CR>",
+    ["<leader>cf"] = ":ImplementInSource<CR>",
+    ["<leader>cv"] = ":ImplementOutOfClass<CR>",
 	},
 
 	term_mode = {

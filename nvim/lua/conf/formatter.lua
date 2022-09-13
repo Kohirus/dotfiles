@@ -10,6 +10,10 @@ local util = require("formatter.util")
 local style = [[-style="{
   BasedOnStyle: WebKit,
   SortIncludes: false,
+  AlignConsecutiveMacros: true,
+  AlignConsecutiveAssignments: true,
+  AlignConsecutiveDeclarations: true,
+  AlignTrailingComments: true,
 }"]]
 
 -- NOTE: need to install format program
