@@ -38,7 +38,7 @@ local defaults = {
 		["<A-Right>"] = "<C-\\><C-N><C-w>l",
 
 		-- 跳转行首/行尾
-		["<C-b>"] = "<ESC>^i",
+		["<C-a>"] = "<ESC>^i",
 		["<C-e>"] = "<End>",
 	},
 
@@ -56,8 +56,8 @@ local defaults = {
 		["<C-Right>"] = ":vertical resize +2<CR>",
 
 		-- 翻页
-		["<C-u>"] = "5k",
-		["<C-d>"] = "5j",
+		["<C-u>"] = "8k",
+		["<C-d>"] = "8j",
 
 		-- Buffer切换
 		["<S-e>"] = ":BufferPrevious<CR>",

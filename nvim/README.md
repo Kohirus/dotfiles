@@ -206,6 +206,7 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 | `insert` |       `jk`       |              退出插入模式          |
 | `insert` |   `Alt + j/k`    |         将当前行向上/向下移动      |
 | `insert` | `Alt + ↑/↓/←/→`  |             在窗口间移动光标       |
+| `insert` |   `Ctrl + a/e`   |           跳转到行首/行尾          |
 
 ### 文件树
 
