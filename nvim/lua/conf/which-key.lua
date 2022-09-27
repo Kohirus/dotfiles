@@ -81,16 +81,17 @@ local mappings = {
 	["r"] = { "<cmd>Lspsaga rename<cr>", "Rename" },
 	["t"] = { "<cmd>lua require('core.utils').ToggleTheme()<cr>", "Toggle Theme" },
 	["f"] = { "<cmd>FormatWrite<cr>", "Formatter" },
+	["o"] = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
 
 	b = {
 		name = "Buffer",
-		q = { "<cmd>BufferAllButCurrent<CR>", "Close Other" },
+		q = { "<cmd>BufferCloseAllButCurrent<CR>", "Close Other" },
 		p = { "<cmd>BufferPin<CR>", "Toggle Pin" },
 		l = { "<cmd>BufferCloseBuffersLeft<CR>", "Close Left" },
 		r = { "<cmd>BufferCloseBuffersRight<CR>", "Close Right" },
 		j = { "<cmd>BufferPick<CR>", "Jump Buffer" },
-		P = { "<cmd>BufferCloseAllButPinned<CR>", "Close But Pin" },
-		c = { "<cmd>BufferCloseButCurrentOrPinned<CR>", "Close No Label" },
+		P = { "<cmd>BufferCloseAllButPinned<CR>", "Close Unpinned" },
+		c = { "<cmd>BufferCloseButCurrentOrPinned<CR>", "Close Nonflags" },
 	},
 
 	s = {
@@ -115,7 +116,6 @@ local mappings = {
 		f = { "<cmd>Telescope lsp_definitions<cr>", "Goto Definition" },
 		t = { "<cmd>Telescope lsp_type_definitions<cr>", "Goto Type Define" },
 		i = { "<cmd>Telescope lsp_implementations<cr>", "Goto Implementation" },
-		o = { "<cmd>SymbolsOutline<cr>", "Symbol Outline" },
 	},
 
 	d = {

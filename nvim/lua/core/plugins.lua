@@ -47,6 +47,7 @@ local plugins = {
 	["nvim-lua/plenary.nvim"] = {},
 	["kyazdani42/nvim-web-devicons"] = { module = "nvim-web-devicons" },
 	["nvim-lua/popup.nvim"] = { module = "popup.nvim" },
+
 	-- colorscheme
 	["olimorris/onedarkpro.nvim"] = {
 		config = function()

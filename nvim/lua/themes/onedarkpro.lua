@@ -15,7 +15,7 @@ onedarkpro.setup({
 	styles = {
 		strings = "NONE", -- Style that is applied to strings
 		comments = "NONE", -- Style that is applied to comments
-		keywords = "bold,italic", -- Style that is applied to keywords
+		keywords = "bold", -- Style that is applied to keywords
 		functions = "NONE", -- Style that is applied to functions
 		variables = "NONE", -- Style that is applied to variables
 		virtual_text = "NONE", -- Style that is applied to virtual text

@@ -13,7 +13,9 @@ local style = [[-style="{
   AlignConsecutiveMacros: true,
   AlignConsecutiveAssignments: true,
   AlignConsecutiveDeclarations: true,
+  AllowShortFunctionsOnASingleLine: true,
   AlignTrailingComments: true,
+  BreakBeforeBraces: Attach,
 }"]]
 
 -- NOTE: need to install format program

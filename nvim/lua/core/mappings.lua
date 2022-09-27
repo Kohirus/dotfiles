@@ -109,8 +109,8 @@ local defaults = {
 		["<leader>rc"] = ":RunClose<CR>",
 
     -- 快速生成静态变量和函数定义
-    ["<leader>cf"] = ":ImplementInSource<CR>",
-    ["<leader>cv"] = ":ImplementOutOfClass<CR>",
+    ["<leader>df"] = ":ImplementInSource<CR>",
+    ["<leader>dv"] = ":ImplementOutOfClass<CR>",
 	},
 
 	term_mode = {
@@ -129,6 +129,8 @@ local defaults = {
     -- 跳到行首行尾
     ["H"] = "^",
     ["L"] = "$",
+
+    ["<leader>df"] = ":lua require('cppassist').ImplementInSourceInVisualMode()<CR>",
 	},
 
 	visual_block_mode = {
@@ -137,6 +139,8 @@ local defaults = {
 		["<A-k>"] = ":m '<-2<CR>==gv-gv",
 
 		["<A-/>"] = ":CommentToggle<CR>",
+
+    ["<leader>df"] = ":lua require('cppassist').ImplementInSourceInVisualMode()<CR>",
 	},
 	command_mode = {
 		-- 命令补全移动选项
