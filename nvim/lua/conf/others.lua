@@ -1,5 +1,47 @@
 local M = {}
 
+-- https://github.com/williamboman/mason.nvim
+M.mason = function()
+	local mason = prequire("mason")
+	if not mason then
+		return
+	end
+
+	mason.setup({
+		ui = {
+			icons = {
+				package_installed = "✔️",
+				package_pending = "⌛",
+				package_uninstalled = "💀",
+			},
+		},
+	})
+end
+
+-- https://github.com/williamboman/mason-lspconfig.nvim
+M.mason_lspconfig = function()
+	local mason_lspconfig = prequire("mason-lspconfig")
+	if not mason_lspconfig then
+		return
+	end
+
+	mason_lspconfig.setup({
+		ensure_installed = { "sumneko_lua", "clangd" },
+	})
+end
+
+-- https://github.com/jayp0521/mason-nvim-dap.nvim
+M.mason_dap = function()
+	local mason_dap = prequire("mason-nvim-dap")
+	if not mason_dap then
+		return
+	end
+
+	mason_dap.setup({
+		ensure_installed = { "cpptools" },
+	})
+end
+
 -- https://github.com/brglng/vim-im-select
 M.im_select = function()
 	vim.g.im_select_command = "/mnt/e/Software/im-select/im-select.exe"
@@ -179,11 +221,11 @@ M.lastplace = function()
 	if not lastplace then
 		return
 	end
-  lastplace.setup({
-    lastplace_ignore_buftype = {"quickfix", "nofile", "help"},
-    lastplace_ignore_filetype = {"gitcommit", "gitrebase", "svn", "hgcommit"},
-    lastplace_open_folds = true
-  })
+	lastplace.setup({
+		lastplace_ignore_buftype = { "quickfix", "nofile", "help" },
+		lastplace_ignore_filetype = { "gitcommit", "gitrebase", "svn", "hgcommit" },
+		lastplace_open_folds = true,
+	})
 end
 
 return M

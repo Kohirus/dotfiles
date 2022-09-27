@@ -17,7 +17,11 @@
 
 **格式化**
 
-请参阅 [formatter](https://github.com/mhartington/formatter.nvim) 然后安装你自己的格式化程序。
+请参阅 [formatter](https://github.com/mhartington/formatter.nvim) 选择自己需要的格式化程序。
+
+然后启动 Neovim，输入 `:Mason` 打开安装界面，按下数字 5 跳转到格式化程序页面，选择自己需要的格式化
+程序然后按下 `i` 键进行安装即可。之后，打开 `~/.config/nvim/lua/conf` 目录下的 `formatter.lua` 文
+件，在其中添加自己需要的格式化选项。
 
 在这个库中，我使用如下格式化程序：
 
@@ -32,14 +36,38 @@
 [default_configuration](https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md)
 为你的语言选择合适的服务器和基本配置。
 
+然后打开 `~/.config/nvim/lua/conf` 路径下的 `others.lua` 文件，找到 `mason_lspconfig()` 函数，
+在 `ensure_installed` 选项中添加自己需要的语言服务器，之后在启动 Neovim 后会自动安装。
+
+然后打开 `lsp_config.lua` 文件，在文件末尾添加该语言服务器的相关配置选项。 
+
 在这个库中，我使用了如下 lsp 服务器：
 
 - stylua: 用于 Lua 语言
 - clangd: 用于 C/C++ 语言
 
+可以输入如下命令安装/卸载 LSP 服务器：
+
+- `:LspInstall [<server>...]`：安装服务器
+- `:LspUninstall <server> ...`：卸载服务器
+
 **调试**
 
-你需要参阅 [nvim-dap](https://github.com/mfussenegger/nvim-dap) 以选择你的调试配置。
+你需要参阅 [nvim-dap](https://github.com/mfussenegger/nvim-dap) 和
+[mason-nvim-dap](https://github.com/jayp0521/mason-nvim-dap.nvim/blob/main/lua/mason-nvim-dap/mappings/source.lua) 
+选择所需要的 dap 服务器。
+
+然后打开 `~/.config/nvim/lua/conf` 路径下的 `others.lua` 文件，找到 `mason_dap()` 函数,
+修改其中的 `ensure_installed` 选项为自己所需要的 dap 服务器，在启动 Neovim 后会自动安装。
+
+在这个库中，我使用了如下 dap 服务器：
+
+- cpptools: 用于 C/C++ 语言
+
+可以输入如下命令安装/卸载 DAP 服务器：
+
+- `:DapInstall [<adapter>...]`：安装适配器
+- `:DapUnistall <adapter> ...`：卸载适配器
 
 **输入法切换**
 
@@ -58,9 +86,7 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 
 然后输入 `nvim` 以启动它，它会自动安装所有插件。如果看到报错，无需理会，重启 neovim 即可。
 
-在 neovim 中，输入 `:LspInstallInfo` 可以看到 lsp 服务器的安装详情。
-
-然后输入 `:DIInstall ccpr_vsc` 为 C/C++ 语言安装调试配置。
+在 neovim 中，输入 `:Mason` 可以看到 lsp/dap/formatter/lint 服务器的安装详情。
 
 文件结构如下所示：
 
@@ -91,10 +117,11 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 - [x] [popup](https://github.com/nvim-lua/popup.nvim)：其他插件可能会使用到的 Lua 函数
 
 **LSP**
-- [x] [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)：lsp 配置
+- [x] [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)：lsp 服务器的相关配置
 - [x] [lspsaga.nvim](https://github.com/kkharji/lspsaga.nvim)：lsp 相关的 UI
 - [x] [lsp_signature](https://github.com/ray-x/lsp_signature.nvim)：函数签名提示
-- [x] [nvim-lsp-installer](https://github.com/williamboman/nvim-lsp-installer)：更容易安装 lsp 相关服务器
+- [x] [mason.nvim](https://github.com/williamboman/mason.nvim)：轻松安装 LSP 服务器、DAP 服务器、linter 和格式化程序
+- [x] [mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim): 沟通 lspconfig 和 mason.nvim 的桥梁
 
 **代码补全**
 - [x] [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)：代码补全
@@ -145,7 +172,7 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 - [x] [nvim-dap](https://github.com/mfussenegger/nvim-dap)：调试
 - [x] [nvim-gdb](https://github.com/sakhnik/nvim-gdb)：gdb 调试
 - [x] [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)：调试 UI
-- [x] [DAPInstall.nvim](https://github.com/Pocco81/DAPInstall.nvim)：安装 dap 相关配置
+- [x] [mason-nvim-dap](https://github.com/jayp0521/mason-nvim-dap.nvim): 沟通 nvim-dap 和 mason.nvim 的桥梁
 - [x] [code_runner.nvim](https://github.com/CRAG666/code_runner.nvim)：运行代码
 
 **工作区域**

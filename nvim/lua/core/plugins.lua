@@ -71,16 +71,21 @@ local plugins = {
 	},
 
 	-- lsp
-	["williamboman/nvim-lsp-installer"] = {
-		opt = true,
-		cmd = require("core.lazy_load").lsp_cmds,
-		setup = function()
-			require("core.lazy_load").on_file_open("nvim-lsp-installer")
+	["williamboman/mason.nvim"] = {
+		config = function()
+			require("conf.others").mason()
+		end,
+	},
+
+	["williamboman/mason-lspconfig.nvim"] = {
+		after = "mason.nvim",
+		config = function()
+			require("conf.others").mason_lspconfig()
 		end,
 	},
 
 	["ray-x/lsp_signature.nvim"] = {
-		after = "nvim-lsp-installer",
+		after = "mason-lspconfig.nvim",
 		config = function()
 			require("conf.lsp-signature")
 		end,
@@ -93,13 +98,14 @@ local plugins = {
 		end,
 	},
 
-	["RRethy/vim-illuminate"] = { after = "lspsaga.nvim" },
+	["RRethy/vim-illuminate"] = {
+		after = "lspsaga.nvim",
+	},
 
 	["neovim/nvim-lspconfig"] = {
 		after = "vim-illuminate",
 		module = "lspconfig",
 		config = function()
-			require("conf.lsp-installer")
 			require("conf.lsp-config")
 		end,
 	},
@@ -239,10 +245,6 @@ local plugins = {
 	},
 
 	["rcarriga/nvim-notify"] = {
-		opt = true,
-		setup = function()
-			require("core.lazy_load").on_file_open("nvim-notify")
-		end,
 		config = function()
 			require("conf.nvim-notify")
 		end,
@@ -376,12 +378,6 @@ local plugins = {
 		end,
 	},
 
-	["ravenxrz/DAPInstall.nvim"] = {
-		opt = true,
-		cmd = require("core.lazy_load").dapinstall_cmds,
-		module = "dap-install",
-	},
-
 	["rcarriga/nvim-dap-ui"] = {
 		module = "dapui",
 		config = function()
@@ -396,12 +392,19 @@ local plugins = {
 		end,
 	},
 
-	["ravenxrz/nvim-dap"] = {
+	["mfussenegger/nvim-dap"] = {
 		keys = { "F8", "F5" },
 		module = "dap",
 		config = function()
 			require("conf.dap-config").setup()
 			require("conf.dap-util")
+		end,
+	},
+
+	["jayp0521/mason-nvim-dap.nvim"] = {
+		after = "nvim-dap",
+		config = function()
+			require("conf.others").mason_dap()
 		end,
 	},
 

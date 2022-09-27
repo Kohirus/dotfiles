@@ -135,8 +135,10 @@ local mappings = {
 		n = { "<cmd>PackerInstall<cr>", "Packer Install" },
 		c = { "<cmd>PackerClean<cr>", "Packer Clean" },
 		p = { "<cmd>PackerProfile<cr>", "Packer Profile" },
-		l = { "<cmd>LspInstallInfo<cr>", "Install Lsp" },
-		i = { "<cmd>LspInfo<cr>", "Lsp Info" },
+		i = { "<cmd>Mason<cr>", "Install Server" },
+		u = { "<cmd>MasonUnistallAll<cr>", "Unistall All" },
+		l = { "<cmd>MasonLog<cr>", "Install Log" },
+		o = { "<cmd>LspInfo<cr>", "Server Info" },
 	},
 
 	p = {

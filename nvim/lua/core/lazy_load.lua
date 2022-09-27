@@ -118,21 +118,6 @@ M.on_file_open = function(plugin_name)
 	})
 end
 
--- lspinstaller & lspconfig cmds for lazyloading
-M.lsp_cmds = {
-	"LspInfo",
-	"LspStart",
-	"LspRestart",
-	"LspStop",
-	"LspInstall",
-	"LspUnInstall",
-	"LspUnInstallAll",
-	"LspInstallInfo",
-	"LspInstallLog",
-	"LspLog",
-	"LspPrintInstalled",
-}
-
 -- treesitter cmds for lazyloading
 M.treesitter_cmds = {
 	"TSInstall",
@@ -167,13 +152,6 @@ M.coderunner_cmds = {
 	"RunClose",
 	"CRFiletype",
 	"CRProjects",
-}
-
--- dap-install cmds for lazyloading
-M.dapinstall_cmds = {
-	"DIInstall",
-	"DIUninstall",
-	"DIList",
 }
 
 -- hop cmds for lazyloading
