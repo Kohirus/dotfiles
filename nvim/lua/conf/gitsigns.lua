@@ -1,7 +1,8 @@
 -- https://github.com/lewis6991/gitsigns.nvim
 
-local gitsigns = prequire("gitsigns")
-if not gitsigns then
+local status_ok, gitsigns = pcall(require, "gitsigns")
+if not status_ok then
+	vim.notify("Not found gitsigns plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
   return
 end
 

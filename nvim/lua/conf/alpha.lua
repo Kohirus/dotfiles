@@ -1,8 +1,9 @@
 -- https://github.com/goolord/alpha-nvim
 
-local alpha = prequire("alpha")
-if not alpha then
-	return
+local status_ok, alpha = pcall(require,"alpha")
+if not status_ok then
+	vim.notify("Not found alpha plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
+  return
 end
 
 local dashboard = require("alpha.themes.dashboard")

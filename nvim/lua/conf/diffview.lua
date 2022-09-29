@@ -1,7 +1,8 @@
 -- https://github.com/sindrets/diffview.nvim
 
-local diff = prequire("diffview")
-if not diff then
+local status_ok, diff = pcall(require, "diffview")
+if not status_ok then
+	vim.notify("Not found diffview plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

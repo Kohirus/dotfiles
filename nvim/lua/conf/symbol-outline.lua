@@ -1,7 +1,8 @@
 -- https://github.com/simrat39/symbols-outline.nvim
 
-local outline = prequire("symbols-outline")
-if not outline then
+local status_ok, outline = pcall(require, "symbols-outline")
+if not status_ok then
+	vim.notify("Not found symbol outline plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

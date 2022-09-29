@@ -66,8 +66,8 @@ local defaults = {
 		[">"] = ":BufferMoveNext<CR>",
 
     -- 跳到行首行尾
-    ["H"] = "^",
-    ["L"] = "$",
+    ["<C-a>"] = "^",
+    ["<C-e>"] = "$",
 
 		-- 文本上下移动
 		["<A-j>"] = ":m .+1<CR>==",
@@ -127,8 +127,8 @@ local defaults = {
 		[">"] = ">gv",
 
     -- 跳到行首行尾
-    ["H"] = "^",
-    ["L"] = "$",
+    ["<C-a>"] = "^",
+    ["<C-e>"] = "$",
 
     ["<leader>df"] = ":lua require('cppassist').ImplementInSourceInVisualMode()<CR>",
 	},

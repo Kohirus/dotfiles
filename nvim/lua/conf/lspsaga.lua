@@ -1,7 +1,8 @@
 -- https://github.com/tami5/lspsaga.nvim
 
-local lspsaga = prequire("lspsaga")
-if not lspsaga then
+local status_ok, lspsaga = pcall(require, "lspsaga")
+if not status_ok then
+	vim.notify("Not found lspsaga plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

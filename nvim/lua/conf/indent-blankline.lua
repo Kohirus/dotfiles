@@ -1,7 +1,8 @@
 -- https://github.com/lukas-reineke/indent-blankline.nvim
 
-local blankline = prequire("indent_blankline")
-if not blankline then
+local status_ok, blankline = pcall(require, "indent_blankline")
+if not status_ok then
+	vim.notify("Not found indent blankline plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
   return
 end
 

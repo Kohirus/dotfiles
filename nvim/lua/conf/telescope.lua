@@ -1,7 +1,8 @@
 -- https://github.com/nvim-telescope/telescope.nvim
 
-local telescope = prequire("telescope")
-if not telescope then
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+	vim.notify("Not found telescope plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

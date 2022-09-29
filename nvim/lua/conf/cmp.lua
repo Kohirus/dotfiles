@@ -16,9 +16,10 @@ end
 ---@param dir number 1 for forward, -1 for backward; defaults to 1
 ---@return boolean true if a jumpable luasnip field is found while inside a snippet
 local function jumpable(dir)
-	local luasnip = prequire("luasnip")
-	if not luasnip then
-		return
+	local status_ok, luasnip = pcall(require, "luasnip")
+	if not status_ok then
+		vim.notify("Not found LuaSnip plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
+		return false
 	end
 
 	local win_get_cursor = vim.api.nvim_win_get_cursor
@@ -133,13 +134,15 @@ local is_emmet_active = function()
 	return false
 end
 
-local cmp = prequire("cmp")
-if not cmp then
+local status_ok, cmp = pcall(require, "cmp")
+if not status_ok then
+	vim.notify("Not found cmp plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 
-local luasnip = prequire("luasnip")
-if not luasnip then
+local status, luasnip = pcall(require, "luasnip")
+if not status then
+	vim.notify("Not found LuaSnip plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 
@@ -151,7 +154,7 @@ require("luasnip.loaders.from_vscode").lazy_load()
   vim.fn.stdpath("config") .. "/snippets"
 } }) -- Load snippets from snippets folder]]
 
-cmp_config = {
+local cmp_config = {
 	confirm_opts = {
 		behavior = cmp.ConfirmBehavior.Replace,
 		select = false,

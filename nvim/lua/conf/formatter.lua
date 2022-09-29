@@ -1,7 +1,8 @@
 -- https://github.com/mhartington/formatter.nvim
 
-local formatter = prequire("formatter")
-if not formatter then
+local status_ok, formatter = pcall(require, "formatter")
+if not status_ok then
+	vim.notify("Not found alpha plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

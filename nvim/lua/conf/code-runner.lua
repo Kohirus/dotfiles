@@ -1,7 +1,8 @@
 -- https://github.com/CRAG666/code_runner.nvim
 
-local code_runner = prequire("code_runner")
-if not code_runner then
+local status_ok, code_runner = pcall(require, "code_runner")
+if not status_ok then
+	vim.notify("Not found code runner plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

@@ -6,8 +6,9 @@
 -- tabnine:   https://github.com/tzachar/cmp-tabnine
 -- nvim_lua:  https://github.com/hrsh7th/cmp-nvim-lua
 
-local cmp = prequire("cmp")
-if not cmp then
+local status_ok, cmp = pcall(require, "cmp")
+if not status_ok then
+	vim.notify("Not found cmp plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

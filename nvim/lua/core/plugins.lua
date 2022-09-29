@@ -17,8 +17,8 @@ if fn.empty(fn.glob(install_path)) > 0 then
 	vim.cmd([[packadd packer.nvim]])
 end
 
-local packer = prequire("packer")
-if not packer then
+local status_ok, packer = pcall(require, "packer")
+if not status_ok then
 	return
 end
 
@@ -47,6 +47,12 @@ local plugins = {
 	["nvim-lua/plenary.nvim"] = {},
 	["kyazdani42/nvim-web-devicons"] = { module = "nvim-web-devicons" },
 	["nvim-lua/popup.nvim"] = { module = "popup.nvim" },
+
+	["rcarriga/nvim-notify"] = {
+		config = function()
+			require("conf.nvim-notify")
+		end,
+	},
 
 	-- colorscheme
 	["olimorris/onedarkpro.nvim"] = {
@@ -241,12 +247,6 @@ local plugins = {
 		end,
 		config = function()
 			require("conf.lualine")
-		end,
-	},
-
-	["rcarriga/nvim-notify"] = {
-		config = function()
-			require("conf.nvim-notify")
 		end,
 	},
 

@@ -1,7 +1,8 @@
 -- https://github.com/folke/which-key.nvim
 
-local which_key = prequire("which-key")
-if not which_key then
+local status_ok, which_key = pcall(require, "which-key")
+if not status_ok then
+	vim.notify("Not found whick key plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

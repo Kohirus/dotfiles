@@ -1,7 +1,8 @@
 -- https://github.com/nvim-lualine/lualine.nvim
 
-local lualine = prequire("lualine")
-if not lualine then
+local status_ok, lualine = pcall(require, "lualine")
+if not status_ok then
+	vim.notify("Not found lualine plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

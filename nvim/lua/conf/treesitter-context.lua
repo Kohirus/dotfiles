@@ -1,7 +1,8 @@
 -- https://github.com/nvim-treesitter/nvim-treesitter-context
 
-local treesitter_context = prequire("treesitter-context")
-if not treesitter_context then
+local status_ok, treesitter_context = pcall(require, "treesitter-context")
+if not status_ok then
+	vim.notify("Not found treesitter context plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
   return
 end
 

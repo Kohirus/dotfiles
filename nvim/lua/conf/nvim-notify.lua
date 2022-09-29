@@ -1,7 +1,8 @@
 -- https://github.com/rcarriga/nvim-notify
 
-local notify = prequire("notify")
-if not notify then
+local status_ok, notify = pcall(require, "notify")
+if not status_ok then
+	vim.notify("Not found notify plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
   return
 end
 

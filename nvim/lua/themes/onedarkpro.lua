@@ -1,7 +1,8 @@
 -- https://github.com/olimorris/onedarkpro.nvim
 
-local onedarkpro = prequire("onedarkpro")
-if not onedarkpro then
+local status_ok, onedarkpro = pcall(require, "onedarkpro")
+if not status_ok then
+	vim.notify("Not found onedarkpro theme!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

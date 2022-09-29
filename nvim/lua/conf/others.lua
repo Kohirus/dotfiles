@@ -2,8 +2,9 @@ local M = {}
 
 -- https://github.com/williamboman/mason.nvim
 M.mason = function()
-	local mason = prequire("mason")
-	if not mason then
+	local status_ok, mason = pcall(require, "mason")
+	if not status_ok then
+		vim.notify("Not found mason plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 
@@ -20,8 +21,9 @@ end
 
 -- https://github.com/williamboman/mason-lspconfig.nvim
 M.mason_lspconfig = function()
-	local mason_lspconfig = prequire("mason-lspconfig")
-	if not mason_lspconfig then
+	local status_ok, mason_lspconfig = pcall(require, "mason-lspconfig")
+	if not status_ok then
+		vim.notify("Not found mason_lspconfig plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 
@@ -32,8 +34,9 @@ end
 
 -- https://github.com/jayp0521/mason-nvim-dap.nvim
 M.mason_dap = function()
-	local mason_dap = prequire("mason-nvim-dap")
-	if not mason_dap then
+	local status_ok, mason_dap = pcall(require, "mason-nvim-dap")
+	if not status_ok then
+		vim.notify("Not found mason dap plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 
@@ -51,8 +54,9 @@ end
 
 -- https://github.com/m-demare/hlargs.nvim
 M.hlargs = function()
-	local hlargs = prequire("hlargs")
-	if not hlargs then
+	local status_ok, hlargs = pcall(require, "hlargs")
+	if not status_ok then
+		vim.notify("Not found hlargs plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 
@@ -74,9 +78,10 @@ end
 
 -- https://github.com/windwp/nvim-autopairs
 M.autopairs = function()
-	local autopairs = prequire("nvim-autopairs")
-	local cmp = prequire("cmp")
-	if not (autopairs and cmp) then
+	local status_ok_auto, autopairs = pcall(require, "nvim-autopairs")
+	local status_ok_cmp, cmp = pcall(require, "cmp")
+	if not (status_ok_auto and status_ok_cmp) then
+		vim.notify("Not found autopairs plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 
@@ -88,8 +93,9 @@ end
 
 -- https://github.com/norcalli/nvim-colorizer.lua
 M.colorizer = function()
-	local colorizer = prequire("colorizer")
-	if not colorizer then
+	local status_ok, colorizer = pcall(require, "colorizer")
+	if not status_ok then
+		vim.notify("Not found colorizer plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 
@@ -98,8 +104,9 @@ end
 
 -- https://github.com/nvim-pack/nvim-spectre
 M.spectre = function()
-	local spectre = prequire("spectre")
-	if not spectre then
+	local status_ok, spectre = pcall(require, "spectre")
+	if not status_ok then
+		vim.notify("Not found spectre plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 
@@ -109,9 +116,9 @@ end
 -- LuaSnip:   https://github.com/saadparwaiz1/cmp_luasnip
 -- friendly-snippets: https://github.com/rafamadriz/friendly-snippets
 M.luasnip = function()
-	local luasnip = prequire("luasnip")
-
-	if not luasnip then
+	local status_ok, luasnip = pcall(require, "luasnip")
+	if not status_ok then
+		vim.notify("Not found LuaSnip plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 
@@ -171,8 +178,9 @@ end
 
 -- https://github.com/phaazon/hop.nvim
 M.hop = function()
-	local hop = prequire("hop")
-	if not hop then
+	local status_ok, hop = pcall(require, "hop")
+	if not status_ok then
+		vim.notify("Not found hop plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 
@@ -181,8 +189,9 @@ end
 
 -- https://github.com/folke/todo-comments.nvim
 M.todo_comments = function()
-	local todo_comments = prequire("todo-comments")
-	if not todo_comments then
+	local status_ok, todo_comments = pcall(require, "todo-comments")
+	if not status_ok then
+		vim.notify("Not found todo comments plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 	todo_comments.setup({
@@ -217,8 +226,9 @@ end
 
 -- https://github.com/ethanholz/nvim-lastplace
 M.lastplace = function()
-	local lastplace = prequire("nvim-lastplace")
-	if not lastplace then
+	local status_ok, lastplace = pcall(require, "nvim-lastplace")
+	if not status_ok then
+		vim.notify("Not found lastplace plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		return
 	end
 	lastplace.setup({

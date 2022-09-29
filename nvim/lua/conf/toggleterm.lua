@@ -1,7 +1,8 @@
 -- https://github.com/akinsho/toggleterm.nvim
 
-local toggleterm = prequire("toggleterm")
-if not toggleterm then
+local status_ok, toggleterm = pcall(require, "toggleterm")
+if not status_ok then
+	vim.notify("Not found toggleterm plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

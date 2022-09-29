@@ -1,7 +1,8 @@
 -- https://github.com/ahmedkhalf/project.nvim
 
-local project = prequire("project_nvim")
-if not project then
+local status_ok, project = pcall(require, "project_nvim")
+if not status_ok then
+	vim.notify("Not found project plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

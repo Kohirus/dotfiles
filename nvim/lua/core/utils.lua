@@ -1,25 +1,3 @@
-_G.warn = function(msg, name)
-	vim.notify(msg, vim.log.levels.WARN, { title = name })
-end
-
-_G.error = function(msg, name)
-	vim.notify(msg, vim.log.levels.ERROR, { title = name })
-end
-
-_G.info = function(msg, name)
-	vim.notify(msg, vim.log.levels.INFO, { title = name })
-end
-
-_G.prequire = function(plugin)
-	local status, lib = pcall(require, plugin)
-	if status then
-		return lib
-	else
-		warn(plugin .. " not found!", "Plugin Warnning")
-	end
-	return nil
-end
-
 local M = {}
 
 M.SaveAll = function()
@@ -49,23 +27,87 @@ M.exists = function(file)
 	return ok, err
 end
 
-M.spinner_frames = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" } -- spinners
+-- LSP intergation
 
-M.update_spinner = function(notif_data)
-	-- update spinner helper function to defer
-	if notif_data.spinner then
-		local new_spinner = (notif_data.spinner + 1) % #spinner_frames
-		notif_data.spinner = new_spinner
+local client_notifs = {}
 
-		notif_data.notification = vim.notify(nil, nil, {
-			hide_from_history = true,
-			icon = spinner_frames[new_spinner],
-			replace = notif_data.notification,
+M.get_notif_data = function(client_id, token)
+	if not client_notifs[client_id] then
+		client_notifs[client_id] = {}
+	end
+
+	if not client_notifs[client_id][token] then
+		client_notifs[client_id][token] = {}
+	end
+
+	return client_notifs[client_id][token]
+end
+
+local spinner_frames = { "⣾", "⣽", "⣻", "⢿", "⡿", "⣟", "⣯", "⣷" } -- spinners
+
+M.update_spinner = function(client_id, token)
+ local notif_data = M.get_notif_data(client_id, token)
+
+ if notif_data.spinner then
+   local new_spinner = (notif_data.spinner + 1) % #spinner_frames
+   notif_data.spinner = new_spinner
+
+   notif_data.notification = vim.notify(nil, nil, {
+     hide_from_history = true,
+     icon = spinner_frames[new_spinner],
+     replace = notif_data.notification,
+   })
+
+   vim.defer_fn(function()
+     M.update_spinner(client_id, token)
+   end, 100)
+ end
+end
+
+M.format_title = function(title, client_name)
+	return client_name .. (#title > 0 and ": " .. title or "")
+end
+
+M.format_message = function(message, percentage)
+	return (percentage and percentage .. "%\t" or "") .. (message or "")
+end
+
+vim.lsp.handlers["$/progress"] = function(_, result, ctx)
+	local client_id = ctx.client_id
+
+	local val = result.value
+
+	if not val.kind then
+		return
+	end
+
+	local notif_data = M.get_notif_data(client_id, result.token)
+
+	if val.kind == "begin" then
+		local message = M.format_message(val.message, val.percentage)
+
+		notif_data.notification = vim.notify(message, "info", {
+			title = M.format_title(val.title, vim.lsp.get_client_by_id(client_id).name),
+			icon = spinner_frames[1],
+			timeout = false,
+			hide_from_history = false,
 		})
 
-		vim.defer_fn(function()
-			update_spinner(notif_data)
-		end, 100)
+		notif_data.spinner = 1
+		M.update_spinner(client_id, result.token)
+	elseif val.kind == "report" and notif_data then
+		notif_data.notification = vim.notify(M.format_message(val.message, val.percentage), "info", {
+			replace = notif_data.notification,
+			hide_from_history = false,
+		})
+	elseif val.kind == "end" and notif_data then
+		notif_data.notification = vim.notify(val.message and M.format_message(val.message) or "Complete", "info", {
+			icon = "",
+			replace = notif_data.notification,
+			timeout = 3000,
+		})
+
+		notif_data.spinner = nil
 	end
 end
 

@@ -1,7 +1,8 @@
 -- https://github.com/terrortylor/nvim-comment
 
-local comment = prequire("nvim_comment")
-if not comment then
+local status_ok, comment = pcall(require, "nvim_comment")
+if not status_ok then
+	vim.notify("Not found nvim comment plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

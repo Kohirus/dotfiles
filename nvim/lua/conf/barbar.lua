@@ -1,7 +1,8 @@
 -- https://github.com/romgrk/barbar.nvim
 
-local barbar = prequire("bufferline")
-if not barbar then
+local status_ok, barbar = pcall(require, "bufferline")
+if not status_ok then
+	vim.notify("Not found barbar plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

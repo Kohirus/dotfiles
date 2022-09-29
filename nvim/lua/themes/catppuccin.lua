@@ -1,7 +1,8 @@
 -- https://github.com/catppuccin/nvim
 
-local catppuccin = prequire("catppuccin")
-if not catppuccin then
+local status_ok, catppuccin = pcall(require, "catppuccin")
+if not status_ok then
+	vim.notify("Not found catppuccin theme!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

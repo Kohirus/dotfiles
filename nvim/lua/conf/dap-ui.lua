@@ -1,6 +1,6 @@
 local status_ok, dapui = pcall(require, "dapui")
 if not status_ok then
-	vim.notify("dapui not found")
+	vim.notify("Not found dapui plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 

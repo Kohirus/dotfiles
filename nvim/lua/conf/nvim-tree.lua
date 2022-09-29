@@ -1,7 +1,8 @@
 -- https://github.com/kyazdani42/nvim-tree.lua
 
-local nvim_tree = prequire("nvim-tree")
-if not nvim_tree then
+local status_ok, nvim_tree = pcall(require, "nvim-tree")
+if not status_ok then
+	vim.notify("Not found NvimTree plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 	return
 end
 
