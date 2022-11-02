@@ -6,6 +6,7 @@ local fn = vim.fn
 local install_path = fn.stdpath("data") .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
 	print("Cloning packer ...")
+	---@diagnostic disable-next-line: lowercase-global
 	packer_bootstrap = fn.system({
 		"git",
 		"clone",
@@ -447,10 +448,14 @@ local plugins = {
 		end,
 	},
 
-	["Kohirus/cppassist.nvim"] = {
+	-- ["Kohirus/cppassist.nvim"] = {
+	["~/cppassist.nvim"] = {
 		opt = true,
 		ft = { "h", "cpp", "hpp", "c", "cc" },
 		requires = { { "nvim-lua/plenary.nvim" } },
+		config = function()
+			require("cppassist").setup()
+		end,
 	},
 }
 

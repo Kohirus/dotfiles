@@ -111,6 +111,9 @@ local defaults = {
     -- 快速生成静态变量和函数定义
     ["<leader>df"] = ":ImplementInSource<CR>",
     ["<leader>dv"] = ":ImplementOutOfClass<CR>",
+
+    -- 快速跳转到光标处的头文件
+    ["<leader>gh"] = ":GotoHeaderFile<CR>",
 	},
 
 	term_mode = {

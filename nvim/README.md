@@ -45,6 +45,7 @@
 
 - stylua: 用于 Lua 语言
 - clangd: 用于 C/C++ 语言
+- cmake: 用于 Cmake 语言
 
 可以输入如下命令安装/卸载 LSP 服务器：
 
@@ -146,7 +147,7 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 - [x] [nvim-hslens](https://github.com/kevinhwang91/nvim-hlslens)：高亮查找
 - [x] [nvim-spectre](https://github.com/nvim-pack/nvim-spectre)：查找/替换
 - [x] [hop.nvim](https://github.com/phaazon/hop.nvim)：快速跳转到行、词、字符
-- [x] [ouroboros](https://github.com/jakemason/ouroboros.nvim): 在头文件和源文件之间跳转
+- [x] [cppassist.nvim](https://github.com/Kohirus/cppassist.nvim): 类似 VAssistX 的功能
 
 **主题**
 - [x] [catppuccin](https://github.com/catppuccin/nvim)
@@ -293,6 +294,15 @@ git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
 |      `gh`       | 异步lsp查找: 查找光标处的定义和引用  |
 |      `g[`       | 跳转到上一个诊断                     |
 |      `g]`       | 跳转到下一个诊断                     |
+
+### CPP助手
+
+| 快捷键          | 描述                                 |
+| :-------------: | :----------------------------------: |
+| `<leader> + df` | 在源文件中生成函数定义               |
+| `<leader> + dv` | 在当前文件中生成函数定义             |
+| `<leader> + gh` | 跳转到光标所在处的头文件             |
+|    `Alt + o`    | 快速切换头文件/源文件                |
 
 ### Git
 

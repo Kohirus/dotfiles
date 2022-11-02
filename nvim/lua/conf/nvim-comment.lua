@@ -27,6 +27,8 @@ comment.setup({
 			vim.api.nvim_buf_set_option(0, "commentstring", "# %s") -- shell use #
 		elseif vim.api.nvim_buf_get_option(0, "filetype") == "lua" then
 			vim.api.nvim_buf_set_option(0, "commentstring", "-- %s") -- lua use --
+		elseif vim.api.nvim_buf_get_option(0, "filetype") == "cmake" then
+			vim.api.nvim_buf_set_option(0, "commentstring", "# %s") -- cmake use #
 		end
 	end,
 })

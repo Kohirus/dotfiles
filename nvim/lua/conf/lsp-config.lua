@@ -27,7 +27,7 @@ local function highlight(client)
 	if present then
 		illuminate.on_attach(client)
 	else
-    vim.notify("Not found vim illuminate plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
+		vim.notify("Not found vim illuminate plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
 		vim.api.nvim_exec(
 			[[
         augroup lsp_document_highlight
@@ -85,4 +85,9 @@ require("lspconfig")["sumneko_lua"].setup({
 			},
 		},
 	},
+})
+require("lspconfig")["cmake"].setup({
+	on_attach = on_attach,
+	capabilities = capabilities,
+	flags = lsp_flags,
 })

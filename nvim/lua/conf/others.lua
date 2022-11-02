@@ -28,7 +28,7 @@ M.mason_lspconfig = function()
 	end
 
 	mason_lspconfig.setup({
-		ensure_installed = { "sumneko_lua", "clangd" },
+		ensure_installed = { "sumneko_lua", "clangd", "cmake" },
 	})
 end
 
@@ -65,6 +65,14 @@ end
 
 -- https://github.com/kevinhwang91/nvim-hlslens
 M.hlslens = function()
+	local status_ok, hlslens = pcall(require, "hlslens")
+	if not status_ok then
+		vim.notify("Not found hlslens plugin!", vim.log.levels.WARN, { title = "Plugin Warning" })
+		return
+	end
+
+	hlslens.setup()
+
 	local kopts = { noremap = true, silent = true }
 	local keybinds = vim.api.nvim_set_keymap
 

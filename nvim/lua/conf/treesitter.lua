@@ -7,7 +7,7 @@ if not status_ok then
 end
 
 treesitter.setup({
-	ensure_installed = { "cpp", "c", "make", "json", "html", "css", "lua", "vim", "cmake", "bash", "yaml" },
+	ensure_installed = { "cpp", "c", "make", "json", "html", "css", "lua", "vim", "cmake", "bash", "yaml", "proto" },
 	-- 同步安装解析器(仅适用于 ensure_installed 的语言)
 	sync_install = false,
 	-- 忽略安装
