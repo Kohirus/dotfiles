@@ -448,8 +448,8 @@ local plugins = {
 		end,
 	},
 
-	-- ["Kohirus/cppassist.nvim"] = {
-	["~/cppassist.nvim"] = {
+	["Kohirus/cppassist.nvim"] = {
+		-- ["~/cppassist.nvim"] = {
 		opt = true,
 		ft = { "h", "cpp", "hpp", "c", "cc" },
 		requires = { { "nvim-lua/plenary.nvim" } },

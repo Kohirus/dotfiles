@@ -82,7 +82,8 @@
 输入如下命令克隆该库：
 
 ```sh
-git clone https://github.com/tuilk/Neovim.git ~/.config/nvim
+git clone git@github.com:Kohirus/dotfiles.git ~/.dotfiles
+ln -s ~/.dotfiles/nvim/ ~/.config/nvim/
 ```
 
 然后输入 `nvim` 以启动它，它会自动安装所有插件。如果看到报错，无需理会，重启 neovim 即可。
