@@ -25,7 +25,7 @@ local mode_adapters = {
 local defaults = {
 	insert_mode = {
 		-- 退出插入模式
-		["jk"] = "<ESC>",
+		-- ["jk"] = "<ESC>",
 
 		-- 文本上下移动
 		["<A-j>"] = "<ESC>:m .+1<CR>==gi",

@@ -28,7 +28,7 @@ M.mason_lspconfig = function()
 	end
 
 	mason_lspconfig.setup({
-		ensure_installed = { "sumneko_lua", "clangd", "cmake" },
+		ensure_installed = { "lua_ls", "clangd", "cmake" },
 	})
 end
 
