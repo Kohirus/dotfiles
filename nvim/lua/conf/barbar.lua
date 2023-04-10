@@ -20,19 +20,30 @@ barbar.setup({
 	-- 标签页去除的文件类型
 	exclude_ft = { "alpha" },
 	exclude_name = { "alpha" },
-	-- 是否开启图标
-	--  如果设置为'numbers',将只显示 buffer 序号
-	--  如果设置为'both',buffer 序号和图标都将显示
-	icons = true,
-	-- 如果设置, 图标颜色将跟随相应的 buffer 高亮组
-	-- 否则, 将使用 devicons 所定义的的默认值
-	icon_custom_color = false,
-	-- 配置 bufferline 图标
-	icon_separator_active = "▎",
-	icon_separator_inactive = "│",
-	icon_close_tab = "",
-	icon_close_tab_modified = "●",
-	icon_pinned = "📌", --"車",
+  -- 当关闭当前缓冲区时，如果左侧存在则聚焦左侧缓冲区
+  focus_on_close = 'left',
+  icons = {
+    buffer_index = false,
+    buffer_number = false,
+    button = '',
+    diagnostics = {
+      [vim.diagnostic.severity.ERROR] = {enabled = false, icon = 'ﬀ'},
+      [vim.diagnostic.severity.WARN] = {enabled = false},
+      [vim.diagnostic.severity.INFO] = {enabled = false},
+      [vim.diagnostic.severity.HINT] = {enabled = false},
+    },
+    filetype = {
+      custom_colors = false,
+      enable = true,
+    },
+    separator = {left = '▎', right = ''},
+    modified = {button = '●'},
+    pinned = {button = '📌', filename = true, separator = {right = ''}},
+    alternate = {filetype = {enabled = false}},
+    current = {buffer_index = true},
+    inactive = {button = '×'},
+    visible = {modified = {buffer_number = false}},
+  },
 	-- 如果为 true, 新的 buffers 将插入到列表头部/尾部
 	-- 默认插入到当前 buffer 的后面
 	insert_at_end = false,
@@ -49,4 +60,14 @@ barbar.setup({
 	-- 设置未命名 buffers 的名称. 默认情况下格式化为 "[Buffer X]"
 	-- 其中 x 表示 buffer 序号. 但是它仅仅是一个静态文本.
 	no_name_title = "[No Name]",
+  sidebar_filetypes = {
+    -- Use the default values: {event = 'BufWinLeave', text = nil}
+    NvimTree = true,
+    -- Or, specify the text used for the offset:
+    undotree = {text = 'undotree'},
+    -- Or, specify the event which the sidebar executes when leaving:
+    ['neo-tree'] = {event = 'BufWipeout'},
+    -- Or, specify both
+    Outline = {event = 'BufWinLeave', text = 'symbols-outline'},
+  },
 })

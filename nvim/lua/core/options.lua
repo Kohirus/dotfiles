@@ -39,7 +39,7 @@ local options = {
 	spell = false, -- 拼写检查
 	spelllang = { "en_us" }, -- 单词拼写检查的语言
 	diffopt = "vertical,filler,internal,context:4",
-	cscopequickfix = "s-,c-,d-,i-,t-,e-", -- cscope 输出到 quickfix 窗口
+	-- cscopequickfix = "s-,c-,d-,i-,t-,e-", -- cscope 输出到 quickfix 窗口
 }
 
 vim.opt.shortmess:append("c")
